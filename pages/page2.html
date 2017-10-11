@@ -1,0 +1,62 @@
+<div class="container">
+	<div class="row">
+	     
+        <div class="col-md-6"  ng-repeat="info in weatherList">
+            <div class="panel panel-default weather-panel shadow">
+                <div class="panel-heading">weather on   <strong>{{info.dt * 1000| date:"medium"}}</strong><br><small id="currentTime" class="supersmall"></small></div>
+                <div class="row">
+                    <div class="col-sm-6 wi" id="currentIcon">
+                    	<img src="../assets/img/03d.png" alt="image">
+                    	<!-- <img src="../assets/img/{{info}}.png" alt="image"> When you have Dynamic url for Icon Bind Here--> 
+                    </div>
+                    <div class="col-sm-6">
+                        	 
+                        	<div>
+                                 <table class="table table-striped">
+                                  
+                                  <tbody>
+                                     <tr>       
+                                      <td scope="row"><strong> <span ng-bind="info.weather[0].main"></span></strong></td>
+                                      <td>(<span ng-bind="info.weather[0].description"></span>) </td>
+                                    </tr>
+                                    <tr>       
+                                      <td scope="row">Temperature</td>
+                                      <td><span ng-bind="info.main.temp"></span></td>
+                                    </tr>
+                                    <tr>     
+                                      <td scope="row">Pressure</td>
+                                      <td><span ng-bind="info.main.pressure"></span> <i>hpa</i></td>
+                                    </tr>
+                                     <tr>      
+                                     <td scope="row">Min Temp</td>
+                                     <td><span ng-bind="info.main.temp_min"></span></td>
+                                    </tr>
+                                     <tr>       
+                                     <td scope="row">Max Temp</td>
+                                     <td><span ng-bind="info.main.temp_max"></span></td>
+                                    </tr>
+                                    <tr>      
+                                       <td scope="row">Humidity</td>     
+                                       <td><span ng-bind="info.main.humidity"></span></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                        	
+                            </div>    
+                        		
+                        	                    	
+                         
+                        <small id="currentSummary"></small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6"><span></span><br>
+                        <span>wind: </span><span id="currentWind"></span><span> <strong>{{info.wind.speed}} mph(s)</strong></span><br>                         
+                    </div>
+                </div>
+            </div>
+        </div>
+         
+       
+	</div>
+</div> 
